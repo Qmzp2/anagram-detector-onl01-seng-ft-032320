@@ -14,7 +14,7 @@ class Anagram
       (@word.split("").sort) == (element.split("").sort)
         return_array << element
       end
-    end
+    
     return_array
     
     array_of_words.select do |element|
