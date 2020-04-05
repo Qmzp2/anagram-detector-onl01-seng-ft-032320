@@ -1,26 +1,19 @@
 # Your code goes here!
 
 class Anagram
+  attr_accessor :word_to_analyze
   
-  attr_accessor :word
+  def initialize(word_to_analyze)
+    @word_to_analyze = word_to_analyze 
+  end 
   
-  def initialize(word)
-    @word = word
-  end
-  
-  def match(array_of_words)
-    
-    array_of_words.each do |element|
-      (@word.split("").sort) == (element.split("").sort)
-        return_array << element
+  def match(find_anagram_in_this_string) 
+    puts "Must find #{self.word_to_analyze} inside the following string: #{find_anagram_in_this_string}"
+    find_anagram_in_this_string.find_all do |word| 
+      if word.split("").sort == self.word_to_analyze.split("").sort 
+        word 
       end
-    
-    return_array
-    
-    array_of_words.select do |element|
-      (@word.split("").sort) == (element.split("").sort)
-    end
+    end 
   end
   
-  
-end
+end 
